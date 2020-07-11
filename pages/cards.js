@@ -1,30 +1,32 @@
 class Card {
-  constructor(memeName) {
+  constructor(memeName, points) {
     this.memeName = memeName;
+    this.points = points;
   }
-}
+};
 
-const trollFace = new Card ('trollFace');
-const badLuckBrian = new Card ('badLuckBrian');
-const overlyAttachedGirlfriend = new Card ('overlyAttachedGirlfriend');
-const scumBagSteve = new Card ('scumBagSteve');
-const michaelJacksonEatingPopcorn = new Card ('michaelJacksonEatingPopcorn');
-const grumpyCat = new Card ('grumpyCat');
-const ermahgherdGirl = new Card ('ermahgherdGirl');
-const arthurFist = new Card ('arthurFist');
-const philosoraptor = new Card ('philosoraptor');
-const successKid = new Card ('successKid');
-const squintingFry = new Card ('squintingFry');
-const rollSafe = new Card ('rollSafe');
-const oneDoesNotSimply = new Card ('oneDoesNotSimply');
-const nyanCat = new Card ('nyanCat');
-const sarcasticWillyWonka = new Card ('sarcasticWillyWonka');
-const spongebobRainbow = new Card ('spongebobRainbow');
-const spongebobMocking = new Card ('spongebobMocking');
-const prettySquidward = new Card ('prettySquidward');
-const evilPatrick = new Card ('evilPatrick');
+const trollFace = new Card ('trollFace', 5);
+const badLuckBrian = new Card ('badLuckBrian', -5);
+const overlyAttachedGirlfriend = new Card ('overlyAttachedGirlfriend', 5);
+const scumBagSteve = new Card ('scumBagSteve', 5);
+const michaelJacksonEatingPopcorn = new Card ('michaelJacksonEatingPopcorn', 10);
+const grumpyCat = new Card ('grumpyCat', 5);
+const ermahgherdGirl = new Card ('ermahgherdGirl', 5);
+const arthurFist = new Card ('arthurFist', 5);
+const philosoraptor = new Card ('philosoraptor', 10);
+const successKid = new Card ('successKid', 5);
+const squintingFry = new Card ('squintingFry', 5);
+const rollSafe = new Card ('rollSafe', 5);
+const oneDoesNotSimply = new Card ('oneDoesNotSimply', 5);
+const nyanCat = new Card ('nyanCat', 20);
+const sarcasticWillyWonka = new Card ('sarcasticWillyWonka', 10);
+const spongebobRainbow = new Card ('spongebobRainbow', 5);
+const spongebobMocking = new Card ('spongebobMocking', 15);
+const prettySquidward = new Card ('prettySquidward', 5);
+const evilPatrick = new Card ('evilPatrick', -5);
 
-const deck = [trollFace,
+const deck = [
+  trollFace,
   badLuckBrian,
   overlyAttachedGirlfriend,
   scumBagSteve,
@@ -42,10 +44,19 @@ const deck = [trollFace,
   spongebobRainbow,
   spongebobMocking,
   prettySquidward,
-  evilPatrick];
+  evilPatrick
+];
 
 export default function Home() {
   console.log(deck)
 
-  return deck.map((card,index) => <div key={index}>{card.memeName}</div>)
+  return deck.map((card,index) => {
+    return (
+      <div key={index}>
+        <div>Meme Name: {card.memeName}</div>
+        <div>Points: {card.points}</div>
+      </div>
+    )
+  }
+  )
 }
