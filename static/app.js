@@ -3,6 +3,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
   const end = document.getElementById("end-game");
   let currentMemeLord = "1";
 
+  const validateHand = hand => {
+    hand.forEach(card => {
+      if (card.holder === "1") return 1;
+
+      return 2;
+    });
+  };
+
   document.addEventListener("click", e => {
     if (e.target.id === "start-game") {
       console.log("game is starting");
@@ -23,11 +31,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
   });
 
   document.addEventListener("dragend", e => {
-    console.log("e.target", e.target);
-    console.log(e.target.parentElement.id);
-
-    if (e.target.parentElement.id === "board") {
+    // console.log("e.target", e.target);
+    // console.log(e.target.parentElement.id);
+    if (
+      e.target.parentElement.id === "board-1" ||
+      e.target.parentElement.id === "board-2"
+    ) {
       e.target.draggable = false;
     }
+  });
+
+  document.addEventListener("drop", e => {
+    console.log(e.target.children, "dropped");
+    // validateHand(e.target.children);
   });
 });
