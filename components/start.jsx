@@ -8,12 +8,16 @@ const Button = styled.button`
   width: 100px;
 `;
 
-const Start = (props) => {
-  return <Button>{props.children}</Button>
+const clearHand = () => {
+  console.log("clicked");
 };
 
-const End = (props) => {
-  return <Button>{props.children}</Button>
+const Start = props => {
+  return <Button onClick={clearHand}>{props.children}</Button>;
+};
+
+const End = props => {
+  return <Button>{props.children}</Button>;
 };
 
 export { Start, End };
