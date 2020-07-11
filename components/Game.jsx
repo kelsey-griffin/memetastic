@@ -3,6 +3,8 @@ import Board from "./Board";
 import Card from "./Card";
 import Hand from "./Hand";
 import Draw from "./draw";
+import ProgressBar from "./ProgressBar";
+
 import MemeLord from "../components/MemeLord";
 import { Start, End } from "../components/start";
 import { deck, FullDeck } from "../pages/cards";
@@ -23,7 +25,7 @@ const Game = props => {
     return newHand;
   };
 
-  const resetHands = () => {
+  const resetHands = e => {
     // e.preventDefault();
     console.log("clicked reset");
     setP1State({ ...p1State, hand: [] });
@@ -31,7 +33,7 @@ const Game = props => {
     console.log("resetHands@@@@");
   };
 
-  const initialDraw = () => {
+  const initialDraw = e => {
     const p1Hand = drawCards(3);
     const p2Hand = drawCards(3);
 
@@ -50,6 +52,8 @@ const Game = props => {
       </End>
       <Draw drawCards={drawCards} />
       <MemeLord identity="1"></MemeLord>
+      <ProgressBar bgcolor={"#ff3c28"} points={p1State.points} />
+
       <Board id="board-1" className="board">
         Player 1's Board
       </Board>
@@ -58,6 +62,7 @@ const Game = props => {
         <Hand cards={p1State.hand} />
       </Board>
       <MemeLord identity="2"></MemeLord>
+      <ProgressBar bgcolor={"#ff3278"} points={p2State.points} />
       <Board id="board-2" className="board">
         Player 2's Board
       </Board>
