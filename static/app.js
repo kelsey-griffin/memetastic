@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function (event) {
   const start = document.getElementById("start-game");
   const end = document.getElementById("end-game");
+  end.disabled = !end.disabled;
   let currentMemeLord = "1";
 
   const validateHand = hand => {
@@ -12,15 +13,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
   };
 
   document.addEventListener("click", e => {
+    e.preventDefault();
     if (e.target.id === "start-game") {
       console.log("game is starting");
 
       //disable start button and enable end button
       e.target.disabled = true;
       end.disabled = !end.disabled;
-
-      //clear all hands
-      //add cards to players' hands
     } else if (e.target.id === "end-game") {
       console.log("game is ending");
 
