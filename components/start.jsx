@@ -13,7 +13,19 @@ const clearHand = () => {
 };
 
 const Start = props => {
-  return <Button onClick={clearHand}>{props.children}</Button>;
+  return (
+    <Button id={props.id} onClick={clearHand} disabled={props.disabled}>
+      {props.children}
+    </Button>
+  );
+};
+
+const End = props => {
+  return (
+    <Button id={props.id} disabled={props.disabled}>
+      {props.children}
+    </Button>
+  );
 };
 
 const End = props => {

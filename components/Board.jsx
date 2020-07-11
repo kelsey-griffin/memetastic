@@ -1,6 +1,13 @@
 import React from "react";
+import styled from "styled-components";
 
-function Board(props) {
+const Div = styled.div`
+  border: solid;
+  height: 100px;
+  width: 100px;
+`;
+
+export default function Board(props) {
   const drop = e => {
     e.preventDefault();
     const card_id = e.dataTransfer.getData("card_id");
@@ -16,14 +23,13 @@ function Board(props) {
   };
 
   return (
-    <div
+    <Div
       id={props.id}
       className={props.className}
       onDrop={drop}
       onDragOver={dragOver}
     >
       {props.children}
-    </div>
+    </Div>
   );
 }
-export default Board;
