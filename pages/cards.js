@@ -63,8 +63,10 @@ const deck = [
   evilPatrick,
 ];
 
-export default function Home() {
-  console.log(deck);
+const randomNumber = Math.floor(Math.random() * deck.length);
+// console.log("random card==> ", deck[randomNumber]);
+
+const FullDeck = () => {
   test.lose50();
 
   return deck.map((card, index) => {
@@ -75,4 +77,6 @@ export default function Home() {
       </div>
     );
   });
-}
+};
+
+export { FullDeck as default, deck };
