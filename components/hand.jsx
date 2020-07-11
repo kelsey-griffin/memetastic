@@ -1,20 +1,15 @@
 //cards in player's hand
 
-import React from "react";
+import React, { useState } from "react";
 import Card from "./Card";
+import _uniqueId from "lodash/uniqueId";
 
 const Hand = ({ cards }) => {
-  console.log("cards ===> ", cards);
   const cardList = cards.map((card, index) => {
+    const [id] = useState(_uniqueId("card-"));
     console.log("in hand==> ", card);
     return (
-      <Card
-        key={index}
-        id="testCard"
-        className="card"
-        draggable="true"
-        holder="1"
-      >
+      <Card key={index} id={id} className="card" draggable="true" holder="1">
         {card.memeName}
       </Card>
     );
