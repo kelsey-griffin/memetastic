@@ -7,14 +7,14 @@ export default function Home() {
       <div>
         <Head>
           <title>Meme Myself & I</title>
-          <script type="text/javascript" src="static/app.js"/>
+          <script type="text/javascript" src="static/app.js" defer/>
           <meta 
             name="viewport" 
             content="initial-scale=1.0, width=device-width" 
           />
         </Head>
-        <Start>START</Start>
-        <End>END</End>
+        <Start id="start-game" disabled={false}>START</Start>
+        <End id="end-game" disabled={true}>END</End>
         <Link href="/cards"><a>Link to Meme Cards</a></Link>
       </div>
   )

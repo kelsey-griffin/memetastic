@@ -9,11 +9,11 @@ const Button = styled.button`
 `;
 
 const Start = (props) => {
-  return <Button>{props.children}</Button>
+  return <Button id={props.id} disabled={props.disabled}>{props.children}</Button>
 };
 
 const End = (props) => {
-  return <Button>{props.children}</Button>
+  return <Button id={props.id} disabled={props.disabled}>{props.children}</Button>
 };
 
 export { Start, End };
