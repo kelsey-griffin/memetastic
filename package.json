@@ -12,11 +12,8 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "styled-components": "^5.1.1"
-<<<<<<< HEAD
-=======
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.10.7"
->>>>>>> 5076c2ffeac671b4b656a30856adb9b4f233617c
   }
 }
