@@ -4,7 +4,8 @@ import styled from "styled-components";
 const Div = styled.div`
   border: solid;
   height: 100px;
-  width: 100px;
+  width: 500px;
+  padding: 1em;
 `;
 
 export default function Board(props) {
