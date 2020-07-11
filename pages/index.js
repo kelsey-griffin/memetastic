@@ -13,12 +13,12 @@ export default function Home() {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <GameRules />
-      <Start id="start-game" disabled={false}>
+      {/* <Start id="start-game" disabled={false}>
         START
       </Start>
       <End id="end-game" disabled={true}>
         END
-      </End>
+      </End> */}
 
       <Game />
 
