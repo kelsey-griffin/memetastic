@@ -28,8 +28,4 @@ const End = props => {
   );
 };
 
-const End = props => {
-  return <Button>{props.children}</Button>;
-};
-
 export { Start, End };
