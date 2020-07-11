@@ -1,11 +1,27 @@
-import Head from 'next/head'
-import Link from 'next/link'
+import Head from "next/head";
+import Link from "next/link";
+import Board from "../components/Board";
+import Card from "../components/Card";
 
 export default function Home() {
   return (
     <div className="container">
       <div>Meme Myself & I</div>
       <Link href="cards">Link to Meme Cards</Link>
+      <Board id="board1">
+        <Card id="card1" className="card" draggable="true">
+          <p>a</p>
+          <p>b</p>
+          <p>c</p>
+        </Card>
+      </Board>
+      <Board id="board2">
+        <Card id="card2" className="card" draggable="true">
+          <p>d</p>
+          <p>e</p>
+          <p>f</p>
+        </Card>
+      </Board>
       {/* <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -208,5 +224,5 @@ export default function Home() {
         }
       `}</style> */}
     </div>
-  )
+  );
 }
