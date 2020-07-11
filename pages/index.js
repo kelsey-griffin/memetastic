@@ -1,12 +1,18 @@
+<<<<<<< HEAD
 import Head from "next/head";
 import Link from "next/link";
 import Board from "../components/Board";
 import Card from "../components/Card";
+=======
+import Link from 'next/link'
+import { Start, End } from '../components/start'
+>>>>>>> 5076c2ffeac671b4b656a30856adb9b4f233617c
 
 export default function Home() {
   return (
-    <div className="container">
+    <div>
       <div>Meme Myself & I</div>
+<<<<<<< HEAD
       <Link href="cards">Link to Meme Cards</Link>
       <Board id="board1">
         <Card id="card1" className="card" draggable="true">
@@ -223,6 +229,11 @@ export default function Home() {
           box-sizing: border-box;
         }
       `}</style> */}
+=======
+      <Start>START</Start>
+      <End>END</End>
+      <Link href="/cards"><a>Link to Meme Cards</a></Link>
+>>>>>>> 5076c2ffeac671b4b656a30856adb9b4f233617c
     </div>
   );
 }
