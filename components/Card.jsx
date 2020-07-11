@@ -7,9 +7,10 @@ const Card = props => {
 
     e.dataTransfer.setData("card_id", target.id);
 
-    setTimeout(() => {
-      target.style.display = "none";
-    }, 0);
+    // This is causing issues with boundaries of drag and drop
+    // setTimeout(() => {
+    // target.style.display = "none";
+    // }, 0);
   };
 
   const dragOver = e => {
@@ -17,16 +18,15 @@ const Card = props => {
   };
 
   return (
-    <div>
-      <div
-        id={props.id}
-        className={props.className}
-        draggable={props.draggable}
-        onDragStart={dragStart}
-        onDragOver={dragOver}
-      >
-        {props.children}
-      </div>
+    <div
+      id={props.id}
+      className={props.className}
+      draggable={props.draggable}
+      onDragStart={dragStart}
+      onDragOver={dragOver}
+      holder={props.holder}
+    >
+      {props.children}
     </div>
   );
 };
