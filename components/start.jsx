@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-
 const Button = styled.button`
   color: red;
   font-size: 15px;
@@ -8,13 +7,17 @@ const Button = styled.button`
   width: 100px;
 `;
 
-const clearHand = () => {
-  console.log("clicked");
-};
+// const clearHand = () => {
+//   console.log("clicked");
+// };
 
 const Start = props => {
   return (
-    <Button id={props.id} onClick={clearHand} disabled={props.disabled}>
+    <Button
+      id={props.id}
+      disabled={props.disabled}
+      onClick={e => props.initialDraw()}
+    >
       {props.children}
     </Button>
   );
