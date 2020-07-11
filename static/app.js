@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(event) { 
   const start = document.getElementById('start-game');
   const end = document.getElementById('end-game');
+  let currentMemeLord = '1';
 
   document.addEventListener('click', (e) => {
     if (e.target.id === "start-game") {
