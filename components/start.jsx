@@ -25,7 +25,11 @@ const Start = props => {
 
 const End = props => {
   return (
-    <Button id={props.id} disabled={props.disabled}>
+    <Button
+      id={props.id}
+      disabled={props.disabled}
+      onClick={e => props.resetHands()}
+    >
       {props.children}
     </Button>
   );
