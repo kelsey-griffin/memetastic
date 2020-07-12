@@ -70,6 +70,10 @@ const Game = props => {
         className="board"
         setP1State={setP1State}
         p1State={p1State}
+        setP2State={setP2State}
+        p2State={p2State}
+        setMemeLord={setMemeLord}
+        memeLord={memeLord}
       >
         Player 1's Board
       </Board>
@@ -84,6 +88,10 @@ const Game = props => {
         className="board"
         setP2State={setP2State}
         p2State={p2State}
+        setP1State={setP1State}
+        p1State={p1State}
+        setMemeLord={setMemeLord}
+        memeLord={memeLord}
       >
         Player 2's Board
       </Board>
