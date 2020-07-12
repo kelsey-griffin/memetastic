@@ -34,10 +34,10 @@ const Card = props => {
       holder={props.holder}
     >
       <CardMUI>
-        <CardHeader 
-          className="card__name" 
+        <CardHeader
+          className="card__name"
           title={props.memeName}
-          titleTypographyProps={{variant: 'subtitle1'}}
+          titleTypographyProps={{ variant: "subtitle1" }}
         />
         <CardMedia
           component="img"
@@ -48,7 +48,14 @@ const Card = props => {
           height="140"
         />
         <CardContent>
-          Followers: <span className="card__value">{props.value}</span>
+          {props.value === 0 ? (
+            <span>SPeCiaL CaRD</span>
+          ) : (
+            <>
+              <span>Followers: </span>
+              <span className="card__value">{props.value}</span>
+            </>
+          )}
         </CardContent>
       </CardMUI>
     </Div>
