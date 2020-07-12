@@ -1,16 +1,10 @@
 document.addEventListener("DOMContentLoaded", function (event) {
   const start = document.getElementById("start-game");
   const end = document.getElementById("end-game");
-  end.disabled = !end.disabled;
+  setTimeout(() => {
+    end.disabled = true;
+  }, 1000)
   let currentMemeLord = "1";
-
-  const validateHand = hand => {
-    hand.forEach(card => {
-      if (card.holder === "1") return 1;
-
-      return 2;
-    });
-  };
 
   document.addEventListener("click", e => {
     e.preventDefault();
@@ -41,7 +35,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
   });
 
   document.addEventListener("drop", e => {
+    //TO DO:
+    //this will be used to prevent players from dropping cards into opponent hand or board
     console.log(e.target.children, "dropped");
-    // validateHand(e.target.children);
   });
 });
