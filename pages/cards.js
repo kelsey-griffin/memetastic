@@ -1,16 +1,17 @@
 class MemeCard {
-  constructor(memeName, points) {
+  constructor(memeName, points, image) {
     this.memeName = memeName;
     this.points = points;
+    this.image = `/static/images/${image}`;
   }
 }
 
-const lose50 = new MemeCard("Lose 50%", 0);
-const doublePoints = new MemeCard("2X Followers", 0);
-const clearBoard = new MemeCard("DoomsDay", 0);
-const allDiscard = new MemeCard("All Discard");
-const opponentDiscard = new MemeCard("Opponent Discard", 0);
-const skipTurn = new MemeCard("Skip Opponent's Turn", 0);
+const lose50 = new MemeCard("Lose 50%", 0, "memeface.png");
+const doublePoints = new MemeCard("2X Followers", 0, "memeface.png");
+const clearBoard = new MemeCard("DoomsDay", 0, "memeface.png");
+const allDiscard = new MemeCard("All Discard", "memeface.png");
+const opponentDiscard = new MemeCard("Opponent Discard", 0, "memeface.png");
+const skipTurn = new MemeCard("Skip Opponent's Turn", 0, "memeface.png");
 
 const specialDeck = [
   lose50,
@@ -21,28 +22,53 @@ const specialDeck = [
   skipTurn,
 ];
 
-const trollFace = new MemeCard("trollFace", 5);
-const badLuckBrian = new MemeCard("badLuckBrian", -5);
-const overlyAttachedGirlfriend = new MemeCard("overlyAttachedGirlfriend", 5);
+const trollFace = new MemeCard("trollFace", 5, "trollface.png");
+const badLuckBrian = new MemeCard("badLuckBrian", -5, "badluckbrian.jpg");
+const overlyAttachedGirlfriend = new MemeCard(
+  "overlyAttachedGirlfriend",
+  5,
+  "overlyattachedgirlfriend.jpg"
+);
 const scumBagSteve = new MemeCard("scumBagSteve", 5);
 const michaelJacksonEatingPopcorn = new MemeCard(
   "michaelJacksonEatingPopcorn",
-  10
+  10,
+  "michaeljacksonpopcorn.jpg"
 );
-const grumpyCat = new MemeCard("grumpyCat", 5);
-const ermahgherdGirl = new MemeCard("ermahgherdGirl", 5);
-const arthurFist = new MemeCard("arthurFist", 5);
-const philosoraptor = new MemeCard("philosoraptor", 10);
-const successKid = new MemeCard("successKid", 5);
-const squintingFry = new MemeCard("squintingFry", 5);
-const rollSafe = new MemeCard("rollSafe", 5);
-const oneDoesNotSimply = new MemeCard("oneDoesNotSimply", 5);
-const nyanCat = new MemeCard("nyanCat", 20);
-const sarcasticWillyWonka = new MemeCard("sarcasticWillyWonka", 10);
-const spongebobRainbow = new MemeCard("spongebobRainbow", 5);
-const spongebobMocking = new MemeCard("spongebobMocking", 15);
-const prettySquidward = new MemeCard("prettySquidward", 5);
-const evilPatrick = new MemeCard("evilPatrick", -5);
+const grumpyCat = new MemeCard("grumpyCat", 5, "grumpycat.jpeg");
+const ermahgherdGirl = new MemeCard("ermahgherdGirl", 5, "ermahgerd.jpg");
+const arthurFist = new MemeCard("arthurFist", 5, "arthurfist.jpeg");
+const philosoraptor = new MemeCard("philosoraptor", 10, "philosoraptor.jpg");
+const successKid = new MemeCard("successKid", 5, "successkid.jpg");
+const squintingFry = new MemeCard("squintingFry", 5, "squintingfry.png");
+const rollSafe = new MemeCard("rollSafe", 5, "rollsafe.jpg");
+const oneDoesNotSimply = new MemeCard(
+  "oneDoesNotSimply",
+  5,
+  "onedoesnotsimply.jpg"
+);
+const nyanCat = new MemeCard("nyanCat", 20, "nyancat.jpg");
+const sarcasticWillyWonka = new MemeCard(
+  "sarcasticWillyWonka",
+  10,
+  "sarcasticwillywonka.jpeg"
+);
+const spongebobRainbow = new MemeCard(
+  "spongebobRainbow",
+  5,
+  "rainbowspongebob.jpg"
+);
+const spongebobMocking = new MemeCard(
+  "spongebobMocking",
+  15,
+  "spongebobmocking.jpg"
+);
+const prettySquidward = new MemeCard(
+  "prettySquidward",
+  5,
+  "prettysquidward.jpg"
+);
+const evilPatrick = new MemeCard("evilPatrick", -5, "evilpatrick.png");
 
 const deck = [
   trollFace,
