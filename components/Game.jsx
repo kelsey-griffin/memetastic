@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
+import styled from "styled-components";
+
 import Board from "./Board";
 import Card from "./Card";
 import Hand from "./Hand";
@@ -8,6 +10,16 @@ import ProgressBar from "./ProgressBar";
 import MemeLord from "../components/MemeLord";
 import { Start, End } from "../components/start";
 import { deck, FullDeck, specialDeck } from "../pages/cards";
+
+const Main = styled.main`
+  border: solid;
+  display: flex;
+`;
+
+const Player = styled.div`
+  border: solid;
+  flex: 6;
+`;
 
 const Game = props => {
   const [p1State, setP1State] = useState({ points: 0, hand: [] });
@@ -61,44 +73,47 @@ const Game = props => {
       <End id="end-game" disabled={false} resetHands={resetHands}>
         END
       </End>
-      <Draw drawCards={drawNewCard} />
-      <MemeLord identity="1"></MemeLord>
-      <ProgressBar bgcolor={"#ff3c28"} points={p1State.points} />
-
-      <Board
-        id="board-1"
-        className="board"
-        setP1State={setP1State}
-        p1State={p1State}
-        setP2State={setP2State}
-        p2State={p2State}
-        setMemeLord={setMemeLord}
-        memeLord={memeLord}
-      >
-        Player 1's Board
-      </Board>
-      <Board id="hand-1" className="board">
-        Player 1's Hand
-        <Hand cards={p1State.hand} />
-      </Board>
-      <MemeLord identity="2"></MemeLord>
-      <ProgressBar bgcolor={"#ff3278"} points={p2State.points} />
-      <Board
-        id="board-2"
-        className="board"
-        setP2State={setP2State}
-        p2State={p2State}
-        setP1State={setP1State}
-        p1State={p1State}
-        setMemeLord={setMemeLord}
-        memeLord={memeLord}
-      >
-        Player 2's Board
-      </Board>
-      <Board id="hand-2" className="board">
-        Player 2's Hand
-        <Hand cards={p2State.hand} />
-      </Board>
+      <Main>
+        <Player>
+          <MemeLord identity="1"></MemeLord>
+          <ProgressBar bgcolor={"#ff3c28"} points={p1State.points} />
+          Player 1's Board
+          <Board
+            id="board-1"
+            className="board"
+            setP1State={setP1State}
+            p1State={p1State}
+            setP2State={setP2State}
+            p2State={p2State}
+            setMemeLord={setMemeLord}
+            memeLord={memeLord}
+          />
+          <Board id="hand-1" className="board">
+            Player 1's Hand
+            <Hand cards={p1State.hand} />
+          </Board>
+        </Player>
+        <Draw drawCards={drawNewCard} />
+        <Player>
+          <MemeLord identity="2"></MemeLord>
+          <ProgressBar bgcolor={"#ff3278"} points={p2State.points} />
+          Player 2's Board
+          <Board
+            id="board-2"
+            className="board"
+            setP2State={setP2State}
+            p2State={p2State}
+            setP1State={setP1State}
+            p1State={p1State}
+            setMemeLord={setMemeLord}
+            memeLord={memeLord}
+          />
+          <Board id="hand-2" className="board">
+            Player 2's Hand
+            <Hand cards={p2State.hand} />
+          </Board>
+        </Player>
+      </Main>
     </>
   );
 };
