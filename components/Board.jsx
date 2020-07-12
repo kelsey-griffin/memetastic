@@ -13,13 +13,13 @@ const Div = styled.div`
   min-width: 85%;
 `;
 
-const checkIfPlayerWon = (props, sum) => {
-  if (props.p1State.points + sum >= 100) {
-    console.log("Player 1 wins");
-  } else if (props.p1State.points + sum >= 100) {
-    console.log("Player 2 wins");
-  }
-};
+// const checkIfPlayerWon = (props, sum) => {
+//   if (props.p1State.points + sum >= 100) {
+//     console.log("Player 1 wins");
+//   } else if (props.p1State.points + sum >= 100) {
+//     console.log("Player 2 wins");
+//   }
+// };
 
 const changePlayerTurn = props => {
   if (props.memeLord === "1") {
@@ -46,7 +46,7 @@ export default function Board(props) {
       //count the value of the cards on the board
       let sum = 0;
       [...e.target.children].forEach(elem => {
-        switch (elem.querySelector(".card__name span").innerHTML) {
+        switch (elem.querySelector(".card__name span").innerHTML || 0) {
           case "Lose 50%":
             sum = sum / 2;
             break;
@@ -82,9 +82,9 @@ export default function Board(props) {
       } else if (props.id[props.id.length - 1] === "2") {
         props.setP2State({ ...props.p2State, points: sum });
       }
-      checkIfPlayerWon(props, sum);
+      // checkIfPlayerWon(props, sum);
       changePlayerTurn(props);
-      console.log(props);
+      // console.log(props);
     }
   };
 

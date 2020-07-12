@@ -2,6 +2,14 @@
 
 import React from "react";
 
+const checkIfPlayerWon = (props) => {
+  const { points, memeLord } = props;
+
+  if (points >= 100) {
+    console.log(`Memelord ${memeLord} wins!`)
+  }
+}
+
 const ProgressBar = props => {
   const { bgcolor, points } = props;
 
@@ -26,6 +34,8 @@ const ProgressBar = props => {
     color: "white",
     fontWeight: "bold",
   };
+
+  checkIfPlayerWon(props);
 
   return (
     <div style={containerStyles}>
