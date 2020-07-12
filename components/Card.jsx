@@ -11,7 +11,7 @@ const Div = styled.div`
 const Card = props => {
   const dragStart = e => {
     const target = e.target;
-    console.log("e.target ===> ", e.target);
+    // console.log("e.target ===> ", e.target);
     e.dataTransfer.setData("card_id", target.id);
 
     // This is causing issues with boundaries of drag and drop
