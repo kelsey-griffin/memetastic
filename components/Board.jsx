@@ -43,6 +43,7 @@ export default function Board(props) {
             break;
           case "DoomsDay":
             sum = 0;
+            e.target.textContent = "";
             break;
           case "All Discard":
             props.setP1State({ ...props.p1State, hand: [] });
