@@ -30,8 +30,8 @@ const overlyAttachedGirlfriend = new MemeCard(
   "overlyattachedgirlfriend.jpg"
 );
 const scumBagSteve = new MemeCard("scumBagSteve", 5, "scumbagsteve.jpg");
-const michaelJacksonEatingPopcorn = new MemeCard(
-  "michaelJacksonEatingPopcorn",
+const MJEatingPopcorn = new MemeCard(
+  "MJEatingPopcorn",
   10,
   "michaeljacksonpopcorn.jpg"
 );
@@ -75,7 +75,7 @@ const deck = [
   badLuckBrian,
   overlyAttachedGirlfriend,
   scumBagSteve,
-  michaelJacksonEatingPopcorn,
+  MJEatingPopcorn,
   grumpyCat,
   ermahgherdGirl,
   arthurFist,

@@ -44,7 +44,7 @@ export default function Board(props) {
       //count the value of the cards on the board
       let sum = 0;
       [...e.target.children].forEach(elem => {
-        switch (elem.querySelector(".card__name span").innerHTML) {
+        switch (elem.querySelector(".card__name span").innerHTML || 0) {
           case "Lose 50%":
             sum = sum / 2;
             break;

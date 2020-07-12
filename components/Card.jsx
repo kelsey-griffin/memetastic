@@ -47,9 +47,11 @@ const Card = props => {
           title={props.memeName}
           height="140"
         />
-        <CardContent>
-          Followers: <span className="card__value">{props.value}</span>
-        </CardContent>
+        {props.value !== 0 && 
+          <CardContent>
+            Followers: <span className="card__value">{props.value}</span>
+          </CardContent>
+        }
       </CardMUI>
     </Div>
   );
