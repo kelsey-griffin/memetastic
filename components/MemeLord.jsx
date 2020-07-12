@@ -13,6 +13,7 @@ const Name = styled.p`
 const Div = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
 `;
 
 const MemeLord = (props) => {
