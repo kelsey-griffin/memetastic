@@ -76,7 +76,11 @@ const Game = props => {
             identity="1"
             memeLord={memeLord}
           />
-          <ProgressBar bgcolor={"#ff3c28"} points={p1State.points} />
+          <ProgressBar 
+            bgcolor={"#ff3c28"} 
+            points={p1State.points} 
+            memeLord={1} 
+          />
           Player 1's Board
           <Board
             id="board-1"
@@ -99,7 +103,11 @@ const Game = props => {
             identity="2"
             memeLord={memeLord}
           />
-          <ProgressBar bgcolor={"#ff3278"} points={p2State.points} />
+          <ProgressBar 
+            bgcolor={"#ff3278"} 
+            points={p2State.points} 
+            memeLord={2}
+          />
           Player 2's Board
           <Board
             id="board-2"
