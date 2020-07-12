@@ -32,13 +32,15 @@ const changePlayerTurn = props => {
 export default function Board(props) {
   const drop = e => {
     e.preventDefault();
-    const card_id = e.dataTransfer.getData("card_id");
 
-    const card = document.getElementById(card_id);
-    card.style.display = "block";
-    e.target.appendChild(card);
-
+    //only allow card to be dropped on a board (not a hand)
     if (props.id[0] === "b") {
+      const card_id = e.dataTransfer.getData("card_id");
+
+      const card = document.getElementById(card_id);
+      card.style.display = "block";
+      e.target.appendChild(card);
+
       //don't allow card to be moved once dropped on a board
       card.setAttribute("draggable", "false");
 
@@ -53,7 +55,7 @@ export default function Board(props) {
           case "2X Followers":
             sum = 2 * sum;
             break;
-          case "DoomsDay":
+          case "DoomsDay": //clear boards
             sum = 0;
             e.target.textContent = "";
             break;
