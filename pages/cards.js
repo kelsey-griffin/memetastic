@@ -23,25 +23,25 @@ const specialDeck = [
 ];
 
 const trollFace = new MemeCard("trollFace", 15, "trollface.png");
-const badLuckBrian = new MemeCard("badLuckBrian", -5, "badluckbrian.jpg");
+const badLuckBrian = new MemeCard("badLuckBrian", -10, "badluckbrian.jpg");
 const overlyAttachedGirlfriend = new MemeCard(
   "overlyAttachedGirlfriend",
   5,
   "overlyattachedgirlfriend.jpg"
 );
-const scumBagSteve = new MemeCard("scumBagSteve", 5, "scumbagsteve.jpg");
+const scumBagSteve = new MemeCard("scumBagSteve", -10, "scumbagsteve.jpg");
 const MJEatingPopcorn = new MemeCard(
   "MJEatingPopcorn",
   10,
   "michaeljacksonpopcorn.jpg"
 );
 const grumpyCat = new MemeCard("grumpyCat", 15, "grumpycat.jpeg");
-const ermahgherdGirl = new MemeCard("ermahgherdGirl", 15, "ermahgerd.jpg");
-const arthurFist = new MemeCard("arthurFist", 15, "arthurfist.jpeg");
+const ermahgherdGirl = new MemeCard("ermahgherdGirl", 25, "ermahgerd.jpg");
+const arthurFist = new MemeCard("arthurFist", 30, "arthurfist.jpeg");
 const philosoraptor = new MemeCard("philosoraptor", 10, "philosoraptor.jpg");
 const successKid = new MemeCard("successKid", 15, "successkid.jpg");
-const squintingFry = new MemeCard("squintingFry", 25, "squintingfry.png");
-const rollSafe = new MemeCard("rollSafe", 25, "rollsafe.jpg");
+const squintingFry = new MemeCard("squintingFry", 40, "squintingfry.png");
+const rollSafe = new MemeCard("rollSafe", 35, "rollsafe.jpg");
 const oneDoesNotSimply = new MemeCard(
   "oneDoesNotSimply",
   5,
@@ -55,12 +55,12 @@ const sarcasticWillyWonka = new MemeCard(
 );
 const spongebobRainbow = new MemeCard(
   "spongebobRainbow",
-  50,
+  20,
   "rainbowspongebob.jpg"
 );
 const spongebobMocking = new MemeCard(
   "spongebobMocking",
-  15,
+  -15,
   "spongebobmocking.jpg"
 );
 const prettySquidward = new MemeCard(
