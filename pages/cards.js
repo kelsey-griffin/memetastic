@@ -14,7 +14,7 @@ const opponentDiscard = new MemeCard("Opponent Discard", 0, "memeface.png");
 const skipTurn = new MemeCard("Skip Opponent's Turn", 0, "memeface.png");
 
 const specialDeck = [
-  lose500,
+  lose50,
   doublePoints,
   clearBoard,
   allDiscard,
@@ -22,7 +22,7 @@ const specialDeck = [
   skipTurn,
 ];
 
-const trollFace = new MemeCard("trollFace", 5, "trollface.png");
+const trollFace = new MemeCard("trollFace", 15, "trollface.png");
 const badLuckBrian = new MemeCard("badLuckBrian", -5, "badluckbrian.jpg");
 const overlyAttachedGirlfriend = new MemeCard(
   "overlyAttachedGirlfriend",
@@ -35,13 +35,13 @@ const michaelJacksonEatingPopcorn = new MemeCard(
   10,
   "michaeljacksonpopcorn.jpg"
 );
-const grumpyCat = new MemeCard("grumpyCat", 5, "grumpycat.jpeg");
-const ermahgherdGirl = new MemeCard("ermahgherdGirl", 5, "ermahgerd.jpg");
-const arthurFist = new MemeCard("arthurFist", 5, "arthurfist.jpeg");
+const grumpyCat = new MemeCard("grumpyCat", 15, "grumpycat.jpeg");
+const ermahgherdGirl = new MemeCard("ermahgherdGirl", 15, "ermahgerd.jpg");
+const arthurFist = new MemeCard("arthurFist", 15, "arthurfist.jpeg");
 const philosoraptor = new MemeCard("philosoraptor", 10, "philosoraptor.jpg");
-const successKid = new MemeCard("successKid", 5, "successkid.jpg");
-const squintingFry = new MemeCard("squintingFry", 5, "squintingfry.png");
-const rollSafe = new MemeCard("rollSafe", 5, "rollsafe.jpg");
+const successKid = new MemeCard("successKid", 15, "successkid.jpg");
+const squintingFry = new MemeCard("squintingFry", 25, "squintingfry.png");
+const rollSafe = new MemeCard("rollSafe", 25, "rollsafe.jpg");
 const oneDoesNotSimply = new MemeCard(
   "oneDoesNotSimply",
   5,
@@ -55,7 +55,7 @@ const sarcasticWillyWonka = new MemeCard(
 );
 const spongebobRainbow = new MemeCard(
   "spongebobRainbow",
-  5,
+  50,
   "rainbowspongebob.jpg"
 );
 const spongebobMocking = new MemeCard(
@@ -65,7 +65,7 @@ const spongebobMocking = new MemeCard(
 );
 const prettySquidward = new MemeCard(
   "prettySquidward",
-  5,
+  50,
   "prettysquidward.jpg"
 );
 const evilPatrick = new MemeCard("evilPatrick", -5, "evilpatrick.png");
