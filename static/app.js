@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
   setTimeout(() => {
     end.disabled = true;
   }, 1000)
-  let currentMemeLord = "1";
 
   document.addEventListener("click", e => {
     e.preventDefault();
