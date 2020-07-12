@@ -9,7 +9,7 @@ class MemeCard {
 const lose50 = new MemeCard("Lose 50%", 0, "memeface.png");
 const doublePoints = new MemeCard("2X Followers", 0, "memeface.png");
 const clearBoard = new MemeCard("DoomsDay", 0, "memeface.png");
-const allDiscard = new MemeCard("All Discard", "memeface.png");
+const allDiscard = new MemeCard("All Discard", 0, "memeface.png");
 const opponentDiscard = new MemeCard("Opponent Discard", 0, "memeface.png");
 const skipTurn = new MemeCard("Skip Opponent's Turn", 0, "memeface.png");
 
