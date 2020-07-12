@@ -5,6 +5,8 @@ import styled from "styled-components";
 
 const Div = styled.div`
   width: 200px;
+  margin: 10px 5px;
+  border: solid 0.5px gray;
 `;
 const Card = props => {
   const dragStart = e => {
@@ -32,7 +34,11 @@ const Card = props => {
       holder={props.holder}
     >
       <CardMUI>
-        <CardHeader className="card__name" title={props.memeName} />
+        <CardHeader 
+          className="card__name" 
+          title={props.memeName}
+          titleTypographyProps={{variant: 'subtitle1'}}
+        />
         <CardMedia
           component="img"
           id={props.id} //need to drag card not just image

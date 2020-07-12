@@ -6,8 +6,14 @@ import _uniqueId from "lodash/uniqueId";
 import styled from "styled-components";
 
 const List = styled.ul`
-  background: palevioletred;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  overflow-y: scroll;
+  max-height: 80%;
+  min-width: 85%;
 `;
+
 const Hand = ({ cards }) => {
   const cardList = cards.map((card, index) => {
     const id = _uniqueId("card-");

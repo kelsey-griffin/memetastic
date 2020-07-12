@@ -3,8 +3,14 @@ import styled from "styled-components";
 
 const Div = styled.div`
   border: solid;
-  height: 100px;
+  height: 500px;
   padding: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  overflow-y: scroll;
+  max-height: 80%;
+  min-width: 85%;
 `;
 
 const checkIfPlayerWon = (props, sum) => {
