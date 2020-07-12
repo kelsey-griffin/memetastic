@@ -3,11 +3,15 @@
 import React, { useState } from "react";
 import Card from "./Card";
 import _uniqueId from "lodash/uniqueId";
+import styled from "styled-components";
 
+const List = styled.ul`
+  background: palevioletred;
+`;
 const Hand = ({ cards }) => {
   const cardList = cards.map((card, index) => {
     const id = _uniqueId("card-");
-    
+
     return (
       <Card key={index} id={id} className="card" draggable="true" holder="1">
         <p>
@@ -17,7 +21,7 @@ const Hand = ({ cards }) => {
       </Card>
     );
   });
-  return cardList;
+  return <List>{cardList}</List>;
 };
 
 export default Hand;
