@@ -17,6 +17,23 @@ export default function Board(props) {
     card.style.display = "block";
 
     e.target.appendChild(card);
+
+    if (props.id[0] === "b") {
+      //only count point on board, not in hand
+      //count the value of the cards on the board
+      let sum = 0;
+      [...e.target.children].forEach(elem => {
+        sum += parseInt(elem.querySelector(".card__value").innerHTML);
+      });
+
+      console.log("sum ==> ", sum);
+      //update the appropriate players' state
+      if (props.id[props.id.length - 1] === "1") {
+        props.setP1State({ ...props.p1State, points: sum });
+      } else if (props.id[props.id.length - 1] === "2") {
+        props.setP2State({ ...props.p2State, points: sum });
+      }
+    }
   };
 
   const dragOver = e => {

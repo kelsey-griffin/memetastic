@@ -54,7 +54,12 @@ const Game = props => {
       <MemeLord identity="1"></MemeLord>
       <ProgressBar bgcolor={"#ff3c28"} points={p1State.points} />
 
-      <Board id="board-1" className="board">
+      <Board
+        id="board-1"
+        className="board"
+        setP1State={setP1State}
+        p1State={p1State}
+      >
         Player 1's Board
       </Board>
       <Board id="hand-1" className="board">
@@ -63,7 +68,12 @@ const Game = props => {
       </Board>
       <MemeLord identity="2"></MemeLord>
       <ProgressBar bgcolor={"#ff3278"} points={p2State.points} />
-      <Board id="board-2" className="board">
+      <Board
+        id="board-2"
+        className="board"
+        setP2State={setP2State}
+        p2State={p2State}
+      >
         Player 2's Board
       </Board>
       <Board id="hand-2" className="board">
