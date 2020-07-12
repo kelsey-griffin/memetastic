@@ -21,8 +21,6 @@ const specialDeck = [
   skipTurn,
 ];
 
-const test = new SpecialCard("test1", 50);
-
 const trollFace = new MemeCard("trollFace", 5);
 const badLuckBrian = new MemeCard("badLuckBrian", -5);
 const overlyAttachedGirlfriend = new MemeCard("overlyAttachedGirlfriend", 5);
