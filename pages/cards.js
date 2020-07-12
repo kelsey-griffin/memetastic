@@ -69,8 +69,6 @@ const deck = [
 const randomNumber = Math.floor(Math.random() * deck.length);
 
 const FullDeck = () => {
-  test.lose500();
-
   return deck.map((card, index) => {
     return (
       <div key={index}>

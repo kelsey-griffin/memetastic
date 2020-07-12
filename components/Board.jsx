@@ -15,6 +15,14 @@ const checkIfPlayerWon = (props, sum) => {
     }
 };
 
+const changePlayerTurn = (props) => {
+  if (props.memeLord === "1") {
+    props.setMemeLord("2")
+  } else {
+    props.setMemeLord("1")
+  }
+};
+
 export default function Board(props) {
   const drop = e => {
     e.preventDefault();
@@ -53,9 +61,7 @@ export default function Board(props) {
             }
             break;
           case "Skip Opponent's Turn":
-            props.MemeLord === "1"
-              ? props.setMemeLord("2")
-              : props.setMemeLord("1");
+            changePlayerTurn(props);
             break;
           default:
             sum += parseInt(elem.querySelector(".card__value").innerHTML);
@@ -69,6 +75,8 @@ export default function Board(props) {
         props.setP2State({ ...props.p2State, points: sum });
       }
       checkIfPlayerWon(props, sum);
+      changePlayerTurn(props);
+      console.log(props)
     }
   };
 
