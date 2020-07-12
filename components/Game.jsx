@@ -18,7 +18,7 @@ const Main = styled.main`
 
 const Player = styled.div`
   border: solid;
-  flex: 6;
+  flex: 5;
 `;
 
 const Game = props => {
