@@ -5,7 +5,7 @@ class MemeCard {
   }
 }
 
-const lose50 = new MemeCard("Lose 50%", 0);
+const lose500 = new MemeCard("Lose 500%", 0);
 const doublePoints = new MemeCard("2X Followers", 0);
 const clearBoard = new MemeCard("DoomsDay", 0);
 const allDiscard = new MemeCard("All Discard");
@@ -13,7 +13,7 @@ const opponentDiscard = new MemeCard("Opponent Discard", 0);
 const skipTurn = new MemeCard("Skip Opponent's Turn", 0);
 
 const specialDeck = [
-  lose50,
+  lose500,
   doublePoints,
   clearBoard,
   allDiscard,
@@ -21,28 +21,28 @@ const specialDeck = [
   skipTurn,
 ];
 
-const trollFace = new MemeCard("trollFace", 5);
-const badLuckBrian = new MemeCard("badLuckBrian", -5);
-const overlyAttachedGirlfriend = new MemeCard("overlyAttachedGirlfriend", 5);
-const scumBagSteve = new MemeCard("scumBagSteve", 5);
+const trollFace = new MemeCard("trollFace", 50);
+const badLuckBrian = new MemeCard("badLuckBrian", -50);
+const overlyAttachedGirlfriend = new MemeCard("overlyAttachedGirlfriend", 50);
+const scumBagSteve = new MemeCard("scumBagSteve", 50);
 const michaelJacksonEatingPopcorn = new MemeCard(
   "michaelJacksonEatingPopcorn",
   10
 );
-const grumpyCat = new MemeCard("grumpyCat", 5);
-const ermahgherdGirl = new MemeCard("ermahgherdGirl", 5);
-const arthurFist = new MemeCard("arthurFist", 5);
+const grumpyCat = new MemeCard("grumpyCat", 50);
+const ermahgherdGirl = new MemeCard("ermahgherdGirl", 50);
+const arthurFist = new MemeCard("arthurFist", 50);
 const philosoraptor = new MemeCard("philosoraptor", 10);
-const successKid = new MemeCard("successKid", 5);
-const squintingFry = new MemeCard("squintingFry", 5);
-const rollSafe = new MemeCard("rollSafe", 5);
-const oneDoesNotSimply = new MemeCard("oneDoesNotSimply", 5);
+const successKid = new MemeCard("successKid", 50);
+const squintingFry = new MemeCard("squintingFry", 50);
+const rollSafe = new MemeCard("rollSafe", 50);
+const oneDoesNotSimply = new MemeCard("oneDoesNotSimply", 50);
 const nyanCat = new MemeCard("nyanCat", 20);
 const sarcasticWillyWonka = new MemeCard("sarcasticWillyWonka", 10);
-const spongebobRainbow = new MemeCard("spongebobRainbow", 5);
-const spongebobMocking = new MemeCard("spongebobMocking", 15);
-const prettySquidward = new MemeCard("prettySquidward", 5);
-const evilPatrick = new MemeCard("evilPatrick", -5);
+const spongebobRainbow = new MemeCard("spongebobRainbow", 50);
+const spongebobMocking = new MemeCard("spongebobMocking", 150);
+const prettySquidward = new MemeCard("prettySquidward", 50);
+const evilPatrick = new MemeCard("evilPatrick", -50);
 
 const deck = [
   trollFace,
@@ -69,7 +69,7 @@ const deck = [
 const randomNumber = Math.floor(Math.random() * deck.length);
 
 const FullDeck = () => {
-  test.lose50();
+  test.lose500();
 
   return deck.map((card, index) => {
     return (

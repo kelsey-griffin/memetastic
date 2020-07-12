@@ -7,6 +7,14 @@ const Div = styled.div`
   padding: 1em;
 `;
 
+const checkIfPlayerWon = (props, sum) => {
+    if (props.p1State.points + sum >= 100) {
+      console.log('Player 1 wins')
+    } else if (props.p1State.points + sum >= 100) {
+      console.log('Player 2 wins')
+    }
+};
+
 export default function Board(props) {
   const drop = e => {
     e.preventDefault();
@@ -60,6 +68,7 @@ export default function Board(props) {
       } else if (props.id[props.id.length - 1] === "2") {
         props.setP2State({ ...props.p2State, points: sum });
       }
+      checkIfPlayerWon(props, sum);
     }
   };
 
