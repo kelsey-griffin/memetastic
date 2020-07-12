@@ -28,7 +28,7 @@ const Game = props => {
 
   const drawCards = num => {
     const drawnCards = [];
-    console.log("card drawn");
+
     // drawnCards gets 3 random cards
     for (let i = 0; i < num; i++) {
       const random1to5 = Math.floor(Math.random() * 5);
@@ -60,9 +60,6 @@ const Game = props => {
     } else {
       setP1State({ ...p2State, hand: [...p2State.hand, drawCards(1)[0]] });
     }
-
-    console.log("p1 hand", p1State.hand);
-    console.log("p2 hand", p2State.hand);
   };
 
   return (

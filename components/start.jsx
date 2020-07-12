@@ -7,10 +7,6 @@ const Button = styled.button`
   width: 100px;
 `;
 
-// const clearHand = () => {
-//   console.log("clicked");
-// };
-
 const Start = props => {
   return (
     <Button

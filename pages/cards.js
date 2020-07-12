@@ -5,17 +5,6 @@ class MemeCard {
   }
 }
 
-class SpecialCard extends MemeCard {
-  lose50() {
-    console.log("lose 50");
-  }
-  doublePoints() {}
-  clearBoard() {}
-  allDiscard() {}
-  opponentDiscard() {}
-  skipTurn() {}
-}
-
 const lose50 = new MemeCard("Lose 50%", 0);
 const doublePoints = new MemeCard("2X Followers", 0);
 const clearBoard = new MemeCard("DoomsDay", 0);
@@ -80,7 +69,6 @@ const deck = [
 ];
 
 const randomNumber = Math.floor(Math.random() * deck.length);
-// console.log("random card==> ", deck[randomNumber]);
 
 const FullDeck = () => {
   test.lose50();

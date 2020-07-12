@@ -17,22 +17,11 @@ export default function Board(props) {
 
     e.target.appendChild(card);
 
-    // const lose50 = new MemeCard("Lose 50%", 0);
-    // const doublePoints = new MemeCard("2X Followers", 0);
-    // const clearBoard = new MemeCard("DoomsDay", 0);
-    // const allDiscard = new MemeCard("All Discard");
-    // const opponentDiscard = new MemeCard("Opponent Discard", 0);
-    // const skipTurn = new MemeCard("Skip Opponent's Turn", 0);
-
     if (props.id[0] === "b") {
       //only count point on board, not in hand
       //count the value of the cards on the board
       let sum = 0;
       [...e.target.children].forEach(elem => {
-        console.log(
-          "innerHTML ==> ",
-          elem.querySelector(".card__name").innerHTML
-        );
         switch (elem.querySelector(".card__name").innerHTML) {
           case "Lose 50%":
             sum = sum / 2;
@@ -64,8 +53,7 @@ export default function Board(props) {
             sum += parseInt(elem.querySelector(".card__value").innerHTML);
         }
       });
-
-      console.log("sum ==> ", sum);
+      
       //update the appropriate players' state
       if (props.id[props.id.length - 1] === "1") {
         props.setP1State({ ...props.p1State, points: sum });
