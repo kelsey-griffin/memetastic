@@ -17,23 +17,26 @@ const Div = styled.div`
 `;
 
 const MemeLord = (props) => {
-  
   return (
     <>
-    <Div>
-    {(props.identity === props.memeLord) &&
-    <>
-      <Name style={{color: "red"}}>MemeLord {props.identity}</Name>
-      <Avatar src="https://i.kym-cdn.com/entries/icons/original/000/000/091/TrollFace.jpg"/>
-    </>
-    }
-    {(props.identity !== props.memeLord) &&
-    <>
-      <Name>MemeLord {props.identity}</Name>
-      <Avatar src="https://i.kym-cdn.com/entries/icons/original/000/000/091/TrollFace.jpg"/>
-    </>
-    }
-    </Div>
+      <Div>
+        {(props.identity === props.memeLord) &&
+          <>
+            <Name style={{color: "red"}}>
+              MemeLord {props.identity}
+            </Name>
+            <Avatar src="https://i.kym-cdn.com/entries/icons/original/000/000/091/TrollFace.jpg"/>
+          </>
+        }
+        {(props.identity !== props.memeLord) &&
+          <>
+            <Name>
+              MemeLord {props.identity}
+            </Name>
+            <Avatar src="https://i.kym-cdn.com/entries/icons/original/000/000/091/TrollFace.jpg"/>
+          </>
+        }
+      </Div>
     </>
   )
 };
