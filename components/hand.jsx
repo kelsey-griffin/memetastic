@@ -10,7 +10,10 @@ const Hand = ({ cards }) => {
     // console.log("in hand==> ", card);
     return (
       <Card key={index} id={id} className="card" draggable="true" holder="1">
-        {card.memeName}
+        <p>
+          <span className="card__name">{card.memeName}:</span>
+          <span className="card__value"> {card.points}</span>
+        </p>
       </Card>
     );
   });
