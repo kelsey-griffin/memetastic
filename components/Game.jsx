@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Board from "./Board";
 import Card from "./Card";
 import Hand from "./Hand";
@@ -12,34 +12,39 @@ import { deck, FullDeck } from "../pages/cards";
 const Game = props => {
   const [p1State, setP1State] = useState({ points: 0, hand: [] });
   const [p2State, setP2State] = useState({ points: 0, hand: [] });
-
+  const [memeLord, setMemeLord] = useState("1");
+  
   const drawCards = num => {
-    const newHand = [];
-
-    // newHand gets 3 random cards
+    const drawnCards = [];
+    console.log('card drawn')
+    // drawnCards gets 3 random cards
     for (let i = 0; i < num; i++) {
       const randomNumber = Math.floor(Math.random() * deck.length);
-      newHand.push(deck[randomNumber]);
+      drawnCards.push(deck[randomNumber]);
     }
 
-    return newHand;
+    return drawnCards;
   };
 
-  const resetHands = e => {
-    // e.preventDefault();
-    console.log("clicked reset");
+  const resetHands = () => {
     setP1State({ ...p1State, hand: [] });
     setP2State({ ...p2State, hand: [] });
-    console.log("resetHands@@@@");
   };
 
-  const initialDraw = e => {
-    const p1Hand = drawCards(3);
-    const p2Hand = drawCards(3);
+  const initialDraw = () => {
+      setP1State({ ...p1State, hand: drawCards(3) });
+      setP2State({ ...p2State, hand: drawCards(3) });
+  };
 
-    setP1State({ ...p1State, hand: p1Hand });
-    setP2State({ ...p2State, hand: p2Hand });
-    console.log("initial Draw@@@");
+  const drawNewCard = () => {
+    if (memeLord === "1") {
+      setP1State({ ...p1State, hand: [...p1State.hand, drawCards(1)[0]]});
+    } else {
+      setP1State({ ...p2State, hand: [...p2State.hand, drawCards(1)[0]]});
+    }
+    
+    console.log('p1 hand', p1State.hand)
+    console.log('p2 hand', p2State.hand)
   };
 
   return (
@@ -50,7 +55,7 @@ const Game = props => {
       <End id="end-game" disabled={false} resetHands={resetHands}>
         END
       </End>
-      <Draw drawCards={drawCards} />
+      <Draw drawCards={drawNewCard} />
       <MemeLord identity="1"></MemeLord>
       <ProgressBar bgcolor={"#ff3c28"} points={p1State.points} />
 
