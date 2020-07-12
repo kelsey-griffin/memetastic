@@ -2,6 +2,7 @@ import React from "react";
 import CardMUI from "@material-ui/core/Card";
 import { CardMedia, CardContent, CardHeader } from "@material-ui/core";
 import styled from "styled-components";
+import { Draggable } from "react-beautiful-dnd";
 
 const Div = styled.div`
   width: 200px;
@@ -25,40 +26,39 @@ const Card = props => {
   };
 
   return (
-    <Div
-      id={props.id}
-      className={props.className}
-      draggable={props.draggable}
-      onDragStart={dragStart}
-      onDragOver={dragOver}
-      holder={props.holder}
-    >
-      <CardMUI>
-        <CardHeader
-          className="card__name"
-          title={props.memeName}
-          titleTypographyProps={{ variant: "subtitle1" }}
-        />
-        <CardMedia
-          component="img"
-          draggable="false"
-          alt={props.memeName}
-          image={props.src}
-          title={props.memeName}
-          height="140"
-        />
-        <CardContent>
-          {props.value === 0 ? (
-            <span>SPeCiaL CaRD</span>
-          ) : (
-            <>
-              <span>Followers: </span>
-              <span className="card__value">{props.value}</span>
-            </>
-          )}
-        </CardContent>
-      </CardMUI>
-    </Div>
+    <Draggable draggableId={props.id} index={props.index}>
+      {provided => (
+        <CardMUI
+          innerRef={provided.innerRef}
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}
+        >
+          <CardHeader
+            className="card__name"
+            title={props.memeName}
+            titleTypographyProps={{ variant: "subtitle1" }}
+          />
+          <CardMedia
+            component="img"
+            draggable="false"
+            alt={props.memeName}
+            image={props.src}
+            title={props.memeName}
+            height="140"
+          />
+          <CardContent>
+            {props.value === 0 ? (
+              <span>SPeCiaL CaRD</span>
+            ) : (
+              <>
+                <span>Followers: </span>
+                <span className="card__value">{props.value}</span>
+              </>
+            )}
+          </CardContent>
+        </CardMUI>
+      )}
+    </Draggable>
   );
 };
 

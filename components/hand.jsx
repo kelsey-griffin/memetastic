@@ -21,6 +21,7 @@ const Hand = ({ cards }) => {
     return (
       <Card
         key={index}
+        index={index}
         id={id}
         className="card"
         draggable="true"
@@ -28,12 +29,7 @@ const Hand = ({ cards }) => {
         memeName={card.memeName}
         value={card.points}
         src={card.image}
-      >
-        {/* <p>
-          <span className="card__name">{card.memeName}</span>
-          <span className="card__value"> {card.points}</span>
-        </p> */}
-      </Card>
+      ></Card>
     );
   });
   return <List>{cardList}</List>;

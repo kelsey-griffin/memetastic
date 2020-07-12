@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Droppable } from "react-beautiful-dnd";
 
 const Div = styled.div`
   border: solid 0.5px;
@@ -81,18 +82,15 @@ export default function Board(props) {
     }
   };
 
-  const dragOver = e => {
-    e.preventDefault();
-  };
-
   return (
-    <Div
-      id={props.id}
-      className={props.className}
-      onDrop={drop}
-      onDragOver={dragOver}
-    >
-      {props.children}
-    </Div>
+    <Droppable droppableId={props.id}>
+      {provided => (
+        <Div innerRef={provided.innerRef} {...provided.droppableProps}>
+          <h3>hello</h3>
+          {props.children}
+          {provided.placeholder}
+        </Div>
+      )}
+    </Droppable>
   );
 }
