@@ -12,12 +12,12 @@ import { Start, End } from "../components/start";
 import { deck, FullDeck, specialDeck } from "../pages/cards";
 
 const Main = styled.main`
-  border: solid;
+  // border: solid;
   display: flex;
 `;
 
 const Player = styled.div`
-  border: solid;
+  // border: solid;
   flex: 5;
 `;
 
