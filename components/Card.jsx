@@ -42,7 +42,6 @@ const Card = props => {
         <CardMedia
           component="img"
           draggable="false"
-          id={props.id} //need to drag card not just image
           alt={props.memeName}
           image={props.src}
           title={props.memeName}
