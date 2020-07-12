@@ -24,19 +24,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
   });
 
   document.addEventListener("dragend", e => {
-    // console.log("e.target", e.target);
-    // console.log(e.target.parentElement.id);
-    if (
-      e.target.parentElement.id === "board-1" ||
-      e.target.parentElement.id === "board-2"
-    ) {
+    const target = e.target.parentElement.id;
+
+    // if the card is placed on a board, it cannot be moved
+    if (target === "board-1" || target === "board-2") {
       e.target.draggable = false;
     }
-  });
-
-  document.addEventListener("drop", e => {
-    //TO DO:
-    //this will be used to prevent players from dropping cards into opponent hand or board
-    console.log(e.target.children, "dropped");
   });
 });
