@@ -7,22 +7,28 @@ import ProgressBar from "./ProgressBar";
 
 import MemeLord from "../components/MemeLord";
 import { Start, End } from "../components/start";
-import { deck, FullDeck } from "../pages/cards";
+import { deck, FullDeck, specialDeck } from "../pages/cards";
 
 const Game = props => {
   const [p1State, setP1State] = useState({ points: 0, hand: [] });
   const [p2State, setP2State] = useState({ points: 0, hand: [] });
   const [memeLord, setMemeLord] = useState("1");
-  
+
   const drawCards = num => {
     const drawnCards = [];
-    console.log('card drawn')
+    console.log("card drawn");
     // drawnCards gets 3 random cards
     for (let i = 0; i < num; i++) {
-      const randomNumber = Math.floor(Math.random() * deck.length);
-      drawnCards.push(deck[randomNumber]);
+      const random1to5 = Math.floor(Math.random() * 5);
+      //20% chance of drawing a Special Card
+      if (random1to5 === 3) {
+        const randomSpecial = Math.floor(Math.random() * specialDeck.length);
+        drawnCards.push(specialDeck[randomSpecial]);
+      } else {
+        const randomRegular = Math.floor(Math.random() * deck.length);
+        drawnCards.push(deck[randomRegular]);
+      }
     }
-
     return drawnCards;
   };
 
@@ -32,19 +38,19 @@ const Game = props => {
   };
 
   const initialDraw = () => {
-      setP1State({ ...p1State, hand: drawCards(3) });
-      setP2State({ ...p2State, hand: drawCards(3) });
+    setP1State({ ...p1State, hand: drawCards(3) });
+    setP2State({ ...p2State, hand: drawCards(3) });
   };
 
   const drawNewCard = () => {
     if (memeLord === "1") {
-      setP1State({ ...p1State, hand: [...p1State.hand, drawCards(1)[0]]});
+      setP1State({ ...p1State, hand: [...p1State.hand, drawCards(1)[0]] });
     } else {
-      setP1State({ ...p2State, hand: [...p2State.hand, drawCards(1)[0]]});
+      setP1State({ ...p2State, hand: [...p2State.hand, drawCards(1)[0]] });
     }
-    
-    console.log('p1 hand', p1State.hand)
-    console.log('p2 hand', p2State.hand)
+
+    console.log("p1 hand", p1State.hand);
+    console.log("p2 hand", p2State.hand);
   };
 
   return (
