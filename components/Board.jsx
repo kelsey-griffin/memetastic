@@ -36,10 +36,12 @@ export default function Board(props) {
 
     const card = document.getElementById(card_id);
     card.style.display = "block";
-
     e.target.appendChild(card);
 
     if (props.id[0] === "b") {
+      //don't allow card to be moved once dropped on a board
+      card.setAttribute("draggable", "false");
+
       //only count point on board, not in hand
       //count the value of the cards on the board
       let sum = 0;
