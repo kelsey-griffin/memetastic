@@ -29,7 +29,7 @@ const overlyAttachedGirlfriend = new MemeCard(
   5,
   "overlyattachedgirlfriend.jpg"
 );
-const scumBagSteve = new MemeCard("scumBagSteve", 5);
+const scumBagSteve = new MemeCard("scumBagSteve", 5, "scumbagsteve.jpg");
 const michaelJacksonEatingPopcorn = new MemeCard(
   "michaelJacksonEatingPopcorn",
   10,
