@@ -26,35 +26,25 @@ const Game = props => {
     return drawnCards;
   };
 
-  const resetHands = e => {
-    // e.preventDefault();
-    
+  const resetHands = () => {
     setP1State({ ...p1State, hand: [] });
     setP2State({ ...p2State, hand: [] });
-
-    console.log("resetHands@@@@");
   };
 
-  const initialDraw = e => {
-      const p1Hand = drawCards(3);
-      const p2Hand = drawCards(3);
-      
-      setP1State({ ...p1State, hand: p1Hand });
-      setP2State({ ...p2State, hand: p2Hand });
-      console.log("initial Draw@@@");
+  const initialDraw = () => {
+      setP1State({ ...p1State, hand: drawCards(3) });
+      setP2State({ ...p2State, hand: drawCards(3) });
   };
 
-  const drawNewCard = e => {
+  const drawNewCard = () => {
     if (memeLord === "1") {
-      const p1Hand = drawCards(1);
       setP1State({ ...p1State, hand: [...p1State.hand, drawCards(1)[0]]});
     } else {
-      const p2Hand = drawCards(1);
-      setP2State({ ...p2State});
+      setP1State({ ...p2State, hand: [...p2State.hand, drawCards(1)[0]]});
     }
-    // setP1State({ ...p1State, hand: [...p1State.hand, drawCards(1)] });
-    console.log(p1State.hand)
     
+    console.log('p1 hand', p1State.hand)
+    console.log('p2 hand', p2State.hand)
   };
 
   return (
