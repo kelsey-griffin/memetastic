@@ -16,6 +16,22 @@ class SpecialCard extends MemeCard {
   skipTurn() {}
 }
 
+const lose50 = new MemeCard("Lose 50%", 0);
+const doublePoints = new MemeCard("2X Followers", 0);
+const clearBoard = new MemeCard("DoomsDay", 0);
+const allDiscard = new MemeCard("All Discard");
+const opponentDiscard = new MemeCard("Opponent Discard", 0);
+const skipTurn = new MemeCard("Skip Opponent's Turn", 0);
+
+const specialDeck = [
+  lose50,
+  doublePoints,
+  clearBoard,
+  allDiscard,
+  opponentDiscard,
+  skipTurn,
+];
+
 const test = new SpecialCard("test1", 50);
 
 const trollFace = new MemeCard("trollFace", 5);
@@ -79,4 +95,4 @@ const FullDeck = () => {
   });
 };
 
-export { FullDeck as default, deck };
+export { FullDeck as default, deck, specialDeck };
