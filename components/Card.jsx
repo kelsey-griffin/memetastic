@@ -1,15 +1,20 @@
 import React from "react";
-// import styles from "./Board.module.css";
+import CardMUI from "@material-ui/core/Card";
+import { CardMedia, CardContent, CardHeader } from "@material-ui/core";
+import styled from "styled-components";
 
+const Div = styled.div`
+  width: 200px;
+`;
 const Card = props => {
   const dragStart = e => {
     const target = e.target;
-
+    console.log("e.target ===> ", e.target);
     e.dataTransfer.setData("card_id", target.id);
 
     // This is causing issues with boundaries of drag and drop
     // setTimeout(() => {
-    // target.style.display = "none";
+    //   target.style.display = "none";
     // }, 0);
   };
 
@@ -18,7 +23,7 @@ const Card = props => {
   };
 
   return (
-    <div
+    <Div
       id={props.id}
       className={props.className}
       draggable={props.draggable}
@@ -26,8 +31,21 @@ const Card = props => {
       onDragOver={dragOver}
       holder={props.holder}
     >
-      {props.children}
-    </div>
+      <CardMUI>
+        <CardHeader className="card__name" title={props.memeName} />
+        <CardMedia
+          component="img"
+          id={props.id} //need to drag card not just image
+          alt={props.memeName}
+          image={props.src}
+          title={props.memeName}
+          height="140"
+        />
+        <CardContent>
+          Followers: <span className="card__value">{props.value}</span>
+        </CardContent>
+      </CardMUI>
+    </Div>
   );
 };
 
