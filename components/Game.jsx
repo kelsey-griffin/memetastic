@@ -58,7 +58,7 @@ const Game = props => {
     if (memeLord === "1") {
       setP1State({ ...p1State, hand: [...p1State.hand, drawCards(1)[0]] });
     } else {
-      setP1State({ ...p2State, hand: [...p2State.hand, drawCards(1)[0]] });
+      setP2State({ ...p2State, hand: [...p2State.hand, drawCards(1)[0]] });
     }
   };
 
@@ -93,7 +93,7 @@ const Game = props => {
             <Hand cards={p1State.hand} />
           </Board>
         </Player>
-        <Draw drawCards={drawNewCard} />
+        <Draw drawCards={drawNewCard} memeLord={memeLord} />
         <Player>
           <MemeLord 
             identity="2"
