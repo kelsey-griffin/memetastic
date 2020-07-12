@@ -6,7 +6,6 @@ import Card from "./Card";
 import Hand from "./Hand";
 import Draw from "./draw";
 import ProgressBar from "./ProgressBar";
-
 import MemeLord from "../components/MemeLord";
 import { Start, End } from "../components/start";
 import { deck, FullDeck, specialDeck } from "../pages/cards";
@@ -25,6 +24,11 @@ const Game = props => {
   const [p1State, setP1State] = useState({ points: 0, hand: [] });
   const [p2State, setP2State] = useState({ points: 0, hand: [] });
   const [memeLord, setMemeLord] = useState("1");
+
+  const resetGame = () => {
+    setP1State({ points: 0, hand: [] });
+    setP2State({ points: 0, hand: [] });
+  };
 
   const drawCards = num => {
     const drawnCards = [];
@@ -49,6 +53,11 @@ const Game = props => {
     setP2State({ ...p2State, hand: [] });
   };
 
+  // const gameOver = bool => {
+  //   console.log("bool ==> ", bool);
+  //   return bool;
+  // };
+
   const initialDraw = () => {
     setP1State({ ...p1State, hand: drawCards(3) });
     setP2State({ ...p2State, hand: drawCards(3) });
@@ -72,14 +81,13 @@ const Game = props => {
       </End>
       <Main>
         <Player>
-          <MemeLord 
-            identity="1"
-            memeLord={memeLord}
-          />
-          <ProgressBar 
-            bgcolor={"#ff3c28"} 
-            points={p1State.points} 
-            memeLord={1} 
+          <MemeLord identity="1" memeLord={memeLord} />
+          <ProgressBar
+            bgcolor={"#ff3c28"}
+            points={p1State.points}
+            memeLord={1}
+            // gameOver={gameOver}
+            resetGame={resetGame}
           />
           Player 1's Board
           <Board
@@ -99,13 +107,12 @@ const Game = props => {
         </Player>
         <Draw drawCards={drawNewCard} memeLord={memeLord} />
         <Player>
-          <MemeLord 
-            identity="2"
-            memeLord={memeLord}
-          />
-          <ProgressBar 
-            bgcolor={"#ff3278"} 
-            points={p2State.points} 
+          <MemeLord identity="2" memeLord={memeLord} />
+          <ProgressBar
+            // gameOver={gameOver}
+            resetGame={resetGame}
+            bgcolor={"#ff3278"}
+            points={p2State.points}
             memeLord={2}
           />
           Player 2's Board
