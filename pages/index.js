@@ -13,9 +13,9 @@ export default function Home() {
       </Head>
       <GameRules />
       <Game />
-      <Link href="/cards">
+      {/* <Link href="/cards">
         <a>Link to Meme Cards</a>
-      </Link>
+      </Link> */}
     </>
   );
 }

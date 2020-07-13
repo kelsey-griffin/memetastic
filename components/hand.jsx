@@ -14,7 +14,8 @@ const List = styled.ul`
   min-width: 85%;
 `;
 
-const Hand = ({ cards }) => {
+const Hand = (props) => {
+  const { cards, player } = props;
   const cardList = cards.map((card, index) => {
     const id = _uniqueId("card-");
 
@@ -36,7 +37,7 @@ const Hand = ({ cards }) => {
       </Card>
     );
   });
-  return <List>{cardList}</List>;
+  return <List id={player}>{cardList}</List>;
 };
 
 export default Hand;
