@@ -45,11 +45,29 @@ const Game = props => {
   };
 
   const resetHands = () => {
+    // document.getElementById('board-1').textContent = "";
+    // document.getElementById('board-2').textContent = "";
+
+    // console.log(p1State)
+    // console.log(p2State)
+    
     // setP1State({ ...p1State, hand: [] });
     // setP2State({ ...p2State, hand: [] });
 
-    setP1State({ ...p1State});
-    setP2State({ ...p1State});
+    // setP1State({ ...p1State});
+    // setP2State({ ...p1State});
+    // const player1Hand = document.getElementById('player-1-hand')
+    // const cardID = Object.values(document.getElementById('player-1-hand').children)[0].id
+
+    // // while (player1Hand.children.length > 1) {
+    //   document.getElementById('player-1-hand').removeChild(document.getElementById(cardID))
+    //   document.getElementById('player-1-hand').removeChild(document.getElementById(cardID))
+    //   document.getElementById('player-1-hand').removeChild(document.getElementById(cardID))
+    // // }
+    
+
+    // console.log(player1Hand)
+    // document.getElementById('player-1-hand')
   };
 
   const initialDraw = () => {
@@ -70,9 +88,9 @@ const Game = props => {
       <Start id="start-game" disabled={false} initialDraw={initialDraw}>
         START
       </Start>
-      <End id="end-game" disabled={false} resetHands={resetHands}>
+      {/* <End id="end-game" disabled={false} resetHands={resetHands}>
         END
-      </End>
+      </End> */}
       <Main>
         <Player>
           <MemeLord 
@@ -96,7 +114,7 @@ const Game = props => {
             memeLord={memeLord}
           />
           <Board id="hand-1" className="board">
-            Player 1's Hand
+            {/* Player 1's Hand */}
             <Hand cards={p1State.hand} player={"player-1-hand"} />
           </Board>
         </Player>
@@ -123,7 +141,7 @@ const Game = props => {
             memeLord={memeLord}
           />
           <Board id="hand-2" className="board">
-            Player 2's Hand
+            {/* Player 2's Hand */}
             <Hand cards={p2State.hand} player={"player-2-hand"} />
           </Board>
         </Player>

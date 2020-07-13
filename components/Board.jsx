@@ -13,11 +13,11 @@ const Div = styled.div`
   min-width: 85%;
 `;
 
-const changePlayerTurn = props => {
+const changePlayerTurn = (props, turnsRemaining = 1) => {
   if (props.memeLord === "1") {
-    props.setMemeLord("2");
+    return props.setMemeLord("2");
   } else {
-    props.setMemeLord("1");
+    return props.setMemeLord("1");
   }
 };
 
@@ -81,7 +81,7 @@ export default function Board(props) {
             }
             break;
           case "Skip Opponent's Turn":
-            changePlayerTurn(props);
+            changePlayerTurn(props, 2);
             break;
           default:
             sum += parseInt(elem.querySelector(".card__value").innerHTML);
@@ -95,10 +95,7 @@ export default function Board(props) {
         props.setP2State({ ...props.p2State, points: sum });
       }
 
-      console.log(props.p1State)
-      console.log(props.p2State)
-
-      changePlayerTurn(props);
+      return changePlayerTurn(props);
     }
   };
 
