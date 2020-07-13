@@ -1,14 +1,17 @@
 // source: https://dev.to/ramonak/react-how-to-create-a-custom-progress-bar-component-in-5-minutes-2lcl
 
 import React from "react";
+import GameOver from "./GameOver";
 
-const checkIfPlayerWon = (props) => {
+const checkIfPlayerWon = props => {
   const { points, memeLord } = props;
 
   if (points >= 100) {
-    console.log(`Memelord ${memeLord} wins!`)
+    console.log(`Memelord ${memeLord} wins!`);
+    return true;
   }
-}
+  return false;
+};
 
 const ProgressBar = props => {
   const { bgcolor, points } = props;
@@ -17,7 +20,7 @@ const ProgressBar = props => {
     width: "84%",
     backgroundColor: "#e0e0de",
     borderRadius: 50,
-    margin: "10px 50px"
+    margin: "10px 50px",
   };
 
   const fillerStyles = {
@@ -36,13 +39,18 @@ const ProgressBar = props => {
   };
 
   checkIfPlayerWon(props);
-
+  console.log("player won? ==>", checkIfPlayerWon(props));
   return (
-    <div style={containerStyles}>
-      <div style={fillerStyles}>
-        <span style={labelStyles}>{`${points}%`}</span>
+    <>
+      {checkIfPlayerWon(props) && (
+        <GameOver resetHands={props.resetHands} winner={props.memeLord} />
+      )}
+      <div style={containerStyles}>
+        <div style={fillerStyles}>
+          <span style={labelStyles}>{`${points}%`}</span>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
