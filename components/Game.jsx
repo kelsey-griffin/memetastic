@@ -6,7 +6,6 @@ import Card from "./Card";
 import Hand from "./Hand";
 import Draw from "./draw";
 import ProgressBar from "./ProgressBar";
-
 import MemeLord from "../components/MemeLord";
 import { Start, End } from "../components/start";
 import { deck, FullDeck, specialDeck } from "../pages/cards";
@@ -54,13 +53,30 @@ const Game = props => {
     setP2State({ ...p2State, hand: drawCards(3) });
   };
 
+  const drawDisabled = () => {
+    if (
+      (memeLord === "1" && p1State.hand.length >= 6) ||
+      (memeLord === "2" && p2State.hand.length >= 6)
+    ) {
+      return "true";
+    }
+    return "false";
+  };
+  console.log("btn disabled ==> ", drawDisabled());
+
   const drawNewCard = () => {
-    if (memeLord === "1") {
+    //only allow player to draw if they have less than max 6 cards in hand
+    if (memeLord === "1" && p1State.hand.length < 6) {
       setP1State({ ...p1State, hand: [...p1State.hand, drawCards(1)[0]] });
-    } else {
+    } else if (memeLord === "2" && p2State.hand.length < 6) {
       setP2State({ ...p2State, hand: [...p2State.hand, drawCards(1)[0]] });
     }
   };
+
+  // const resetGame = () => {
+  //   setP1State({ points: 0, hand: [] });
+  //   setP2State({ points: 0, hand: [] });
+  // };
 
   return (
     <>
@@ -72,14 +88,12 @@ const Game = props => {
       </End>
       <Main>
         <Player>
-          <MemeLord 
-            identity="1"
-            memeLord={memeLord}
-          />
-          <ProgressBar 
-            bgcolor={"#ff3c28"} 
-            points={p1State.points} 
-            memeLord={1} 
+          <MemeLord identity="1" memeLord={memeLord} />
+          <ProgressBar
+            bgcolor={"#ff3c28"}
+            points={p1State.points}
+            memeLord={1}
+            resetHands={resetHands}
           />
           Player 1's Board
           <Board
@@ -97,16 +111,18 @@ const Game = props => {
             <Hand cards={p1State.hand} />
           </Board>
         </Player>
-        <Draw drawCards={drawNewCard} memeLord={memeLord} />
+        <Draw
+          drawCards={drawNewCard}
+          drawDisabled={drawDisabled}
+          memeLord={memeLord}
+        />
         <Player>
-          <MemeLord 
-            identity="2"
-            memeLord={memeLord}
-          />
-          <ProgressBar 
-            bgcolor={"#ff3278"} 
-            points={p2State.points} 
+          <MemeLord identity="2" memeLord={memeLord} />
+          <ProgressBar
+            bgcolor={"#ff3278"}
+            points={p2State.points}
             memeLord={2}
+            resetHands={resetHands}
           />
           Player 2's Board
           <Board
