@@ -45,8 +45,11 @@ const Game = props => {
   };
 
   const resetHands = () => {
-    setP1State({ ...p1State, hand: [] });
-    setP2State({ ...p2State, hand: [] });
+    // setP1State({ ...p1State, hand: [] });
+    // setP2State({ ...p2State, hand: [] });
+
+    setP1State({ ...p1State});
+    setP2State({ ...p1State});
   };
 
   const initialDraw = () => {
@@ -94,7 +97,7 @@ const Game = props => {
           />
           <Board id="hand-1" className="board">
             Player 1's Hand
-            <Hand cards={p1State.hand} />
+            <Hand cards={p1State.hand} player={"player-1-hand"} />
           </Board>
         </Player>
         <Draw drawCards={drawNewCard} memeLord={memeLord} />
@@ -121,7 +124,7 @@ const Game = props => {
           />
           <Board id="hand-2" className="board">
             Player 2's Hand
-            <Hand cards={p2State.hand} />
+            <Hand cards={p2State.hand} player={"player-2-hand"} />
           </Board>
         </Player>
       </Main>

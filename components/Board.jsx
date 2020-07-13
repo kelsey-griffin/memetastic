@@ -21,6 +21,14 @@ const changePlayerTurn = props => {
   }
 };
 
+const removeLastCard = (e) => {
+  const boardCards = e.target.children;
+  const lastPlayedCard = boardCards[boardCards.length - 1]
+  
+  //remove last card that was played
+  e.target.removeChild(document.getElementById(lastPlayedCard.id))
+};
+
 export default function Board(props) {
   const drop = e => {
     e.preventDefault();
@@ -50,14 +58,26 @@ export default function Board(props) {
             e.target.textContent = "";
             break;
           case "All Discard":
-            props.setP1State({ ...props.p1State, hand: [] });
-            props.setP2State({ ...props.p2State, hand: [] });
+            // props.setP1State({ ...props.p1State, hand: [] });
+            // props.setP2State({ ...props.p2State, hand: [] });
+            // props.setP1State({ ...props.p1State});
+            // props.setP2State({ ...props.p2State});
+            
+            document.getElementById('player-1-hand').textContent = "";
+            document.getElementById('player-2-hand').textContent = "";
+            removeLastCard(e)
             break;
           case "Opponent Discard":
             if (props.id[props.id.length - 1] === "1") {
-              props.setP2State({ ...props.p2State, hand: [] });
+              // props.setP2State({ ...props.p2State, hand: [] });
+              // props.setP2State({ ...props.p2State});
+              document.getElementById('player-2-hand').textContent = "";
+              removeLastCard(e)
             } else {
-              props.setP1State({ ...props.p1State, hand: [] });
+              // props.setP1State({ ...props.p1State, hand: [] });
+              // props.setP1State({ ...props.p1State});
+              document.getElementById('player-1-hand').textContent = "";
+              removeLastCard(e)
             }
             break;
           case "Skip Opponent's Turn":
@@ -74,6 +94,9 @@ export default function Board(props) {
       } else if (props.id[props.id.length - 1] === "2") {
         props.setP2State({ ...props.p2State, points: sum });
       }
+
+      console.log(props.p1State)
+      console.log(props.p2State)
 
       changePlayerTurn(props);
     }
