@@ -10,11 +10,7 @@ const Button = styled.button`
 
 const Draw = props => {
   const isDisabled = props.drawDisabled === "true" ? "disabled" : "";
-  return (
-    <Button isDisabled onClick={e => props.drawCards(1)}>
-      Draw
-    </Button>
-  );
+  return <Button onClick={e => props.drawCards(1)}>Draw</Button>;
 };
 
 export default Draw;
