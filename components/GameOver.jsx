@@ -27,11 +27,13 @@ export default function GameOver(props) {
   const handleClose = () => {
     props.resetHands();
   };
+
+  console.log("winner", props.winner, typeof props.winner);
   return (
     <Div>
       <InnerDiv>
         <h1>WINNER: MEMELORD {props.winner}</h1>
-        <h2>LOSER: MEMELORD {props.winner === "1" ? "2" : "1"}</h2>
+        <h2>LOSER: MEMELORD {props.winner === 1 ? 2 : 1}</h2>
         <img
           src="/static/images/lastgame.jpeg"
           alt="One Last Game Meme"
